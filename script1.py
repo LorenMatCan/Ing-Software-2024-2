@@ -104,10 +104,45 @@ def setTenis(primerjugador, segundojugador):
             puntosSegundoJugador += 1
         numeroJuegos += 1
         terminado = finJuego(puntosPrimerJugador, puntosSegundoJugador,6)
-        print("Marcador: ", puntosPrimerJugador, "-", puntosSegundoJugador)
-    ganador = ganador(puntosPrimerJugador, puntosSegundoJugador,primerjugador,segundojugador, "Set")
-    return ganador , numeroJuegos
+        print("Marcador del set: ", puntosPrimerJugador, "-", puntosSegundoJugador)
+    ganadorSet = ganador(puntosPrimerJugador, puntosSegundoJugador,primerjugador,segundojugador, "Set")
+    return ganadorSet , numeroJuegos
 
+def cambioCancha(numeroJuegos):
+    if numeroJuegos % 2 != 0:
+        print("Cambio de cancha")
+
+def finJuegoTotal(primerJugador,segundojugador,puntosPrimerJugador,puntosSegundoJugador):
+    if puntosPrimerJugador == 2:
+        print("El jugador ", primerJugador, "ha ganado el partido")
+        return True
+    elif puntosSegundoJugador == 2:
+        print("El jugador ", primerJugador, "ha ganado el partido")
+        return True
+    elif puntosPrimerJugador == puntosSegundoJugador == 1 :
+        return False
+    else:
+        return False
+
+
+def juegoASets(primerJugador, segundoJugador):
+    
+    terminado = False
+    puntosPrimerJugador = 0
+    puntosSegundoJugador = 0 
+    setA=0
+    while not terminado:
+        print("Set actual: ",setA)
+        resultados = setTenis(primerJugador,segundoJugador)
+        cambioCancha(resultados[1])
+        if (resultados[0]==primerJugador):
+            puntosPrimerJugador += 1
+        else:
+            puntosSegundoJugador += 1
+        setA+=1
+        print("Marcador del juego: ", puntosPrimerJugador, "-", puntosSegundoJugador)
+        terminado = finJuegoTotal(primerJugador,segundoJugador,puntosPrimerJugador,puntosSegundoJugador)
+    
 
 def juegoTenis():
     print("Marcador de puntos de juego de tenis /n")
@@ -119,7 +154,7 @@ def juegoTenis():
     print("Ingrese el nombre del segundo jugador: ")
     jugador2 = input()
     print("El juego ha comenzado entre", jugador1, "y", jugador2)
-    setTenis(jugador1, jugador2)
+    juegoASets(jugador1, jugador2)
 
 
 if __name__ == '__main__':
