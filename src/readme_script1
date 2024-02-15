@@ -1,0 +1,8 @@
+El modo de entrada de datos es mediante la terminal.
+Debera ingresar el nombre del jugador cuando se le solicite, tenga en cuenta que el programa 
+es sensible a mayusculas y minusculas.
+
+Una vez ingresado el nombre de los jugadores, el programa le solicitara que ingrese el
+nombre del jugador que gano el punto, debera escribir el nombre del jugador tal y como lo ingreso
+al inicio del programa.
+
