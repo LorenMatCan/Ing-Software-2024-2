@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+"""
+Script en el cual importamos la biblioteca matplotlib y graficamos la función seno de la biblioteca numpy.
+"""
 x = np.linspace(-10, 10, 100)
 y = np.sin(x)
 plt.figure()

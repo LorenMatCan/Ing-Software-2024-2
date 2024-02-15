@@ -1,4 +1,8 @@
 class Nodo :
+    """
+    clase auxiliar nodo para arbol binario
+    """
+    
     def __init__(self, valor, izq = None, der = None) :
         self.valor = valor
         self.izq = izq
