@@ -36,11 +36,43 @@ class Arbol:
     def strRecursivo(self, raiz):
         cadena = ""
         if raiz.obtener_izq() != None:
-            cadena += "izq :"+self.strRecursivo(raiz.obtener_izq())
+            cadena += "(izq :"+self.strRecursivo(raiz.obtener_izq())+") "
         cadena += str(raiz) + " "
         if raiz.obtener_der() != None:
-            cadena += "der: " + self.strRecursivo(raiz.obtener_der())
+            cadena += "(der: " + self.strRecursivo(raiz.obtener_der())+")"
         return cadena
+
+    def recorrido_inorden(self):
+         return self.recorrido_inorden_recursivo(self.raiz)
+        
+
+    def recorrido_inorden_recursivo(self, raiz, lista = []):
+        if raiz != None:
+            self.recorrido_inorden_recursivo(raiz.obtener_izq())
+            lista.append(raiz.obtener_valor())
+            self.recorrido_inorden_recursivo(raiz.obtener_der())
+        return lista
+
+    
+    def recorrido_preorden(self):
+        return self.recorrido_preorden_recursivo(self.raiz)
+
+    def recorrido_preorden_recursivo(self, raiz, lista = []):
+        if raiz != None:
+            lista.append(raiz.obtener_valor())
+            self.recorrido_preorden_recursivo(raiz.obtener_izq())
+            self.recorrido_preorden_recursivo(raiz.obtener_der())
+        return lista
+
+    def recorrido_postorden(self):
+        return self.recorrido_postorden_recursivo(self.raiz)
+
+    def recorrido_postorden_recursivo(self, raiz, lista = []):
+        if raiz != None:
+            self.recorrido_postorden_recursivo(raiz.obtener_izq())
+            self.recorrido_postorden_recursivo(raiz.obtener_der())
+            lista.append(raiz.obtener_valor())
+        return lista
 
 
 

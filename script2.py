@@ -34,13 +34,4 @@ def problemaDelcamiante():
 
 
 if __name__ == '__main__':
-    nodoPrueba = Nodo(5)
-    arbol = Arbol(nodoPrueba)
-    arbol.agregarNodo(Nodo(3))
-    arbol.agregarNodo(Nodo(5))
-    arbol.agregarNodo(Nodo(7))
-    arbol.agregarNodo(Nodo(2))
-    arbol.agregarNodo(Nodo(20))
-    arbol.agregarNodo(Nodo(1))
-    arbol.agregarNodo(Nodo(6))
-    print(arbol)
+    problemaDelcamiante()
