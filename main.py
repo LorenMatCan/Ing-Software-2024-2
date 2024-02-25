@@ -65,7 +65,10 @@ def add_stuff ():
     add_rent("ingenieria@gmail.com", "Nimona", "2024-02-20")
     add_rent("ayelrey@gmail.com", "El Rey Leon", "2024-01-24")
     add_rent("Maravilla@elsombreo.com", "Alicia en el pais de las maravillas", "2023-10-21")
-    add_rent("ingenieria@gmail.com", "Pato y yo", "2024-02-24")
+    add_rent("ingenieria@gmail.com", "Pato y yo", "2024-02-25")
+    add_rent("ingenieria@gmail.com", "Nimona", "2024-02-25")
+    add_rent("ingenieria@gmail.com", "El Rey Leon", "2024-02-25")
+    add_rent("Maravilla@elsombreo.com", "Nimona", "2023-02-25")
 
 ## Función que filtre a la tabla de usuarios segun si una cadena aparece en el apellido paterno, materno o nombre.
 def filter_user_by_last_name (cadena):
