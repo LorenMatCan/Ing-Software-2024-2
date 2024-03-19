@@ -17,12 +17,24 @@ def crear_renta():
     
 @renta_controller.route('/editar_renta',methods=['GET','POST'])
 def actualizar_renta():
-    return render_template('rentas/actualizar_renta.html')
+    if request.method == 'POST':
+        idRenta = request.form['id']
+        fechaRenta = request.form['fecha']
+        model_renta.actualiza_fecha_renta(idRenta, fechaRenta)
+        return redirect(url_for('renta_controller.ver_renta'))
+    else:
+        return render_template('rentas/actualizar_renta.html')
 
 @renta_controller.route('/eliminar_renta',methods=['GET','POST'])
 def eliminar_renta():
-    return render_template('rentas/eliminar_renta.html')
+    if request.method == 'POST':
+        idRenta = request.form['id']
+        model_renta.eliminar_renta(idRenta)
+        return redirect(url_for('renta_controller.ver_renta'))
+    else:
+        return render_template('rentas/eliminar_renta.html')
 
 @renta_controller.route('/ver_rentas',methods=['GET','POST'])
 def ver_renta():
-    return render_template('rentas/ver_renta.html')
+    rentas = model_renta.obtener_rentas()
+    return render_template('rentas/ver_renta.html', rentas=rentas)

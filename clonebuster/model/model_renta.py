@@ -7,7 +7,7 @@ def actualiza_fecha_renta(id, nuevo_nombre):
     if renta is None:
         print("No se encontro la renta")
         return
-    nuevaFecha = datetime.datetime.strptime(nuevo_nombre, '%Y-%m-%d')
+    nuevaFecha = nuevo_nombre
     renta.fecha_Renta  = nuevaFecha
     db.session.commit()
     print("Renta actualizado con éxito")
@@ -38,3 +38,6 @@ def añadir_renta( idUsuario, idPelicula, fechaRenta, diasRenta=5, estatus=0):
     db.session.add(renta)
     db.session.commit()
     print("Renta añadida con éxito")
+
+def obtener_rentas():
+    return Renta.query.all()

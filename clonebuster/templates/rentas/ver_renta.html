@@ -4,7 +4,25 @@
 {% endblock %}
 {% block body %}
     <center>
-        <h1>Lista de usuarios</h1>        
+        <h1>Lista de rentas</h1>        
     </center>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Id Usuario</th>
+            <th>Id Pelicula</th>
+            <th>Fecha</th>
+            <th>Dias</th>
+        </tr>
+        {% for renta in rentas %}
+        <tr>
+            <td>{{ renta.idRentar}}</td>
+            <td>{{ renta.idUsuario}}</td>
+            <td>{{ renta.idPelicula}}</td>
+            <td>{{ renta.fecha_Renta }}</td>
+            <td>{{ renta.dias_de_Renta}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
 {% endblock %}

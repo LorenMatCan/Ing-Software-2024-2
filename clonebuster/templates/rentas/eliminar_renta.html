@@ -4,7 +4,10 @@
 {% endblock %}
 {% block body %}
     <center>
-        <h1>Elimine a un usuario o a toda la lista</h1>        
+        <h1>Elimine una renta</h1>        
     </center>
+    <form action="{{ url_for('renta_controller.eliminar_renta') }}" method="post">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type="submit" value="Eliminar">
 
 {% endblock %}

@@ -4,7 +4,12 @@
 {% endblock %}
 {% block body %}
     <center>
-        <h1>Actualice a una pelicula</h1>        
+        <h1>Actualice  una renta</h1>        
     </center>
+    <form action="{{ url_for('renta_controller.actualizar_renta') }}" method="post">
+        <input type="number" name="id" placeholder="ID" required>
+        <input type= "date" name="fecha" placeholder="nueva Fecha"  required>
+        <input type="submit" value="Actualizar">
+    </form>
 
 {% endblock %}
