@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 
+
 from alchemyClasses import db
 from contollers.PrimerControlador import mi_primer_blueprint
 from contollers.ControllerAlumno import alumno_blueprint

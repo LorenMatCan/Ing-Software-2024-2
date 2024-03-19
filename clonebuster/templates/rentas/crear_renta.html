@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+    
+{% endblock %}
+{% block body %}
+    <center>
+        <h1>Registre una renta</h1>        
+    </center>
+
+   <form action="{{ url_for('renta_controller.crear_renta') }}" method="post">
+    <input type= "number" name="idPelicula" placeholder="ID Pelicula" required>
+    <input type= "number" name="idUsuario" placeholder="ID Usuario" required>
+    <input type= "date" name="fechaRenta" placeholder="Fecha de renta" required>
+    <input type= "number" name="diasRenta" placeholder="Dias de renta" required>
+    <input type="submit" value="Registrar">
+    </form>
+
+{% endblock %}

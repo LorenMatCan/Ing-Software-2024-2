@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block head %}
+    
+{% endblock %}
+{% block body %}
+    <center>
+        <h1>Usuarios </h1>
+        <h2>Selecione una acción:</h2>
+        
+    </center>
+    <ul>
+        <li><h2><a href="{{ url_for('usuario_controller.crear_usuario') }}">Ingresar un nuevo usuario</a></h2></li>
+        <li><h2><a href="{{ url_for('usuario_controller.actualizar_usuario') }}">Modifique a un usuario existente </a></h2></li>
+        <li><h2><a href="{{ url_for('usuario_controller.eliminar_usuario') }}">Borre a un usuario</a></h2></li>
+        <li><h2><a href="{{ url_for('usuario_controller.ver_usuarios') }}">Revise la tabla de usuarios</a></h2></li>
+        <li><h2><a href="{{ url_for('index_controller.index') }}">Salir</a></h2></li>
+    </ul>
+{% endblock %}
+
+
+

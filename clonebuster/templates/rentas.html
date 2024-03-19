@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+    
+{% endblock %}
+{% block body %}
+    <center>
+        <h1>Rentas </h1>
+        <h2>Selecione una acción:</h2>
+    </center>
+    <ul>
+        <li><h2><a href="{{ url_for('renta_controller.crear_renta') }}">Ingresar una nueva renta</a></h2></li>
+        <li><h2><a href="{{ url_for('renta_controller.actualizar_renta') }}">Modifique a una renta existente </a></h2></li>
+        <li><h2><a href="{{ url_for('renta_controller.eliminar_renta') }}">Borre a una renta/o borre toda la tabla</a></h2></li>
+        <li><h2><a href="{{ url_for('renta_controller.ver_renta') }}">Revise la tabla de Rentas</a></h2></li>
+        <li><h2><a href="{{ url_for('index_controller.index') }}">Salir</a></h2></li>
+    </ul>
+{% endblock %}

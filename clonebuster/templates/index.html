@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head %}
+    
+{% endblock %}
+{% block body %}
+    <center>
+        <h1>Bienvenido al sistema de Clonebuster </h1>
+        <h2>Escoga una opción:</h2>
+    </center>
+    <ul>
+        <li><h2><a href="{{ url_for('index_controller.usuarios') }}">Usuarios</a></h2></li>
+        <li><h2><a href="{{ url_for('index_controller.peliculas') }}">Peliculas</a></h2></li>
+        <li><h2><a href="{{ url_for('index_controller.rentas') }}">Rentas</a></h2></li>
+    </ul>
+{% endblock %}

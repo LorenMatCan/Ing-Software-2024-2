@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block head %}
+    
+{% endblock %}
+{% block body %}
+    <center>
+        <h1>Peliculas </h1>
+        <h2>Selecione una acción:</h2>
+    </center>
+    <ul>
+        <li><h2><a href="{{ url_for('pelicula_controller.crear_pelicula') }}">Ingresar una nueva pelicula</a></h2></li>
+        <li><h2><a href="{{ url_for('pelicula_controller.actualizar_pelicula') }}">Modifique a una pelicula existente </a></h2></li>
+        <li><h2><a href="{{ url_for('pelicula_controller.eliminar_pelicula') }}">Borre a una pelicula</a></h2></li>
+        <li><h2><a href="{{ url_for('pelicula_controller.ver_pelicula') }}">Revise la tabla de Peliculas</a></h2></li>
+        <li><h2><a href="{{ url_for('index_controller.index') }}">Salir</a></h2></li>
+    </ul>
+{% endblock %}
