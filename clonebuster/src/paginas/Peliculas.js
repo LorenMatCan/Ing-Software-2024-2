@@ -2,20 +2,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { NuevoUsuario } from './usuario/NuevoUsuario.js';
-import { ActualizarUsuarios } from './usuario/ActualizarUsuario.js';
-import { VerUsuarios } from './usuario/VerUsuarios.js';
-import { BorrarUsuarios } from './usuario/BorrarUsuario.js'
-import "./Peliculas.css";
+import { NuevaPelicula, NuevoUsuario } from './peliculas/NuevaPelicula.js';
+import { ActualizarPeliculas } from './peliculas/ActualizarPeliculas.js';
+import { VerPeliculas } from './peliculas/VerPeliculas.js';
+import { BorrarPeliculas } from './peliculas/BorrarPeliculas.js'
+import "./Usuarios.css";
 
 
 
 export const PeliculasIndice = () => {
     const [Contenido, setContenido] = useState(0);
-    const [Peiculas, setPeliculas] = useState([
-        { id: 1, nombre: "Juan", apellidoPaterno: "Perez", apellidoMaterno: "Gomez", contrasena: "1234", correo: "ingenieria@gmail.com"},
-        { id: 2, nombre: "Maria", apellidoPaterno: "Gonzalez", apellidoMaterno: "Martinez", contrasena: "rosas", correo: "hola@gmail.com"},
-        { id: 3, nombre: "Pedro", apellidoPaterno: "Ramirez", apellidoMaterno: "Lopez", contrasena: "zapato", correo: "lol@gmail.com"},
+    const [Peliculas, setPeliculas] = useState([
+        {id: 1, nombre: "Nimona", genero: "Aventura",duracion:"140", inventario:"10"},
+        {id: 2, nombre: "El señor de los anillos", genero: "Aventura",duracion:"180", inventario:"10"},
+        {id: 3, nombre: "Star Wars 29", genero: "Aventura",duracion:"120", inventario:"10"}
     ]);
 
     function ActualizarListaPeliculas(nuevaLista){
@@ -25,27 +25,28 @@ export const PeliculasIndice = () => {
     return (
 
         <div className="Contenedor">
-            <h1>Usuarios</h1>
+            <h1>Peliculas</h1>
             <Row>
                 <Col>
-                    <Button variant="outline-light"onClick={() => setContenido(1)}>Ingresar Usuario</Button>
+                    <Button variant="outline-light"onClick={() => setContenido(1)}>Ingresar Pelicula</Button>
                 </Col>
                 <Col>
-                    <Button variant="outline-light" onClick={() => setContenido(2)}>Actualizar Usuario</Button>
+                    <Button variant="outline-light" onClick={() => setContenido(2)}>Actualizar Pelicula</Button>
                 </Col>
                 <Col>
-                    <Button variant="outline-light"onClick={() => setContenido(3)}>Ver Usuarios</Button>
+                    <Button variant="outline-light"onClick={() => setContenido(3)}>Ver Peliculas</Button>
                 </Col>
                 <Col>
-                    <Button variant="outline-light" onClick={() => setContenido(4)}>Eliminar Usuario</Button>
+                    <Button variant="outline-light" onClick={() => setContenido(4)}>Eliminar Pelicula</Button>
                 </Col>
             </Row>
         
             <div className="Cuerpo">
-                {Contenido === 1 && <NuevoUsuario peliculas={Peliculas} funcion={ActualizarListaPelicula}/>}
-                {Contenido === 2 && <ActualizarUsuarios pelicuas={Peliculas} funcion={ActualizarListaPelicula} />}
-                {Contenido === 3 && <VerUsuarios peliculas={Peliculas} />}
-                {Contenido === 4 && <BorrarUsuarios  peliculas={Peliculas} funcion={ActualizarListaPelicula}/>}
+                {Contenido === 1 && <NuevaPelicula peliculas={Peliculas} funcion={ActualizarListaPeliculas} />}
+                {Contenido === 2 && <ActualizarPeliculas peliculas={Peliculas} funcion={ActualizarListaPeliculas} />}
+                {Contenido === 3 && <VerPeliculas peliculas={Peliculas} />}
+                {Contenido === 4 && <BorrarPeliculas peliculas={Peliculas} funcion={ActualizarListaPeliculas} />}
+
             </div>  
         </div>
 

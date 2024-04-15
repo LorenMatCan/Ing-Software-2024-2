@@ -5,16 +5,16 @@ import { Container } from "react-bootstrap";
 import { useState } from "react";  
 
 
-export function BorrarUsuarios({usuarios,funcion}) {
+export function BorrarPeliculas({peliculas,funcion}) {
     const [idN, setId] = useState(0);
 
     const handleId = (event) => {
         setId(event.target.value);
     } 
 
-    function borrarUsuario(){
+    function borrarPelicula(){
         const id = parseInt(idN);
-        const nuevaLista = usuarios.filter((usr) => usr.id !== id);
+        const nuevaLista = peliculas.filter((peli) => peli.id !== id);
         funcion(nuevaLista); 
     }
 
@@ -24,20 +24,20 @@ export function BorrarUsuarios({usuarios,funcion}) {
 
     return (
         <div>   
-        <h3>BorrarUsuario</h3>
+        <h3>Borrar Peliculas de inventario</h3>
         <Container>
             <Row>
                 <Col>
                 <label>id:</label>
                 <input type="number" onChange={handleId}/>
-                <Button variant="outline-light" onClick={borrarUsuario}>BorrarUsuario</Button>
+                <Button variant="outline-light" onClick={borrarPelicula}>Borrar Pelicula</Button>
                 </Col>
             </Row>            
         </Container>
         
         <Container>
-            <h3 >Borrar todos los usuarios</h3>
-            <Button variant="outline-light" onClick={borrarTodos}>Borrar todos los usuarios</Button>
+            <h3 >Borrar inventario</h3>
+            <Button variant="outline-light" onClick={borrarTodos}>Borrar inventario</Button>
          
         </Container>
         </div>
