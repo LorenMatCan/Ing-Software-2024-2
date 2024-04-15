@@ -11,7 +11,16 @@ import "./Usuarios.css";
 
 
 export const UsuariosIndice = () => {
-    const [contenido, setContenido] = useState(0);
+    const [Contenido, setContenido] = useState(0);
+    const [Usuarios, setUsuarios] = useState([
+        { id: 1, nombre: "Juan", apellidoPaterno: "Perez", apellidoMaterno: "Gomez", contrasena: "1234", correo: "ingenieria@gmail.com"},
+        { id: 2, nombre: "Maria", apellidoPaterno: "Gonzalez", apellidoMaterno: "Martinez", contrasena: "rosas", correo: "hola@gmail.com"},
+        { id: 3, nombre: "Pedro", apellidoPaterno: "Ramirez", apellidoMaterno: "Lopez", contrasena: "zapato", correo: "lol@gmail.com"},
+    ]);
+
+    function ActualizarListaUsuarios(nuevaLista){
+        setUsuarios(nuevaLista);
+    }
 
     return (
 
@@ -31,11 +40,12 @@ export const UsuariosIndice = () => {
                     <Button variant="outline-light" onClick={() => setContenido(4)}>Eliminar Usuario</Button>
                 </Col>
             </Row>
+        
             <div className="Cuerpo">
-                {contenido === 1 && <NuevoUsuario />}
-                {contenido === 2 && <ActualizarUsuarios />}
-                {contenido === 3 && <VerUsuarios />}
-                {contenido === 4 && <BorrarUsuarios />}
+                {Contenido === 1 && <NuevoUsuario usuarios={Usuarios} funcion={ActualizarListaUsuarios}/>}
+                {Contenido === 2 && <ActualizarUsuarios usuarios={Usuarios} funcion={ActualizarListaUsuarios} />}
+                {Contenido === 3 && <VerUsuarios usuarios={Usuarios} />}
+                {Contenido === 4 && <BorrarUsuarios  usuarios={Usuarios} funcion={ActualizarListaUsuarios}/>}
             </div>  
         </div>
 
